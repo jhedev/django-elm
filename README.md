@@ -13,6 +13,7 @@ Now you can add `elm` to your INSTALLED_APPS in your django project.
 
 ##Usage in templates
 inline:
+
     <script type="text/javascript" src="{{ STATIC_URL }}js/elm-runtime.js"></script>
     {% load elm_compiler %}
     {% elminline %}
