@@ -20,9 +20,7 @@ class ElmNode(template.Node):
     def compile(self,source):
         process = Popen(ELM_COMPILER_EXECUTABLE,shell=True, stdin=PIPE, stdout=PIPE)
         (javascript,err) = process.communicate(input=self.nodelist.render(source))
-        if not err:
-            return javascript
-        return ""
+        return javascript
 
     def render(self, context):
         return '<script type="text/javascript">' + self.compile(context) + '</script>'
