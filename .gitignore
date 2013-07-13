@@ -1,7 +1,10 @@
 build
 dist
+elm/bin/elmToJS
 *.pyc
 .DS_STORE
 *.swp
 *.egg-info
 *.egg
+*.hi
+*.o

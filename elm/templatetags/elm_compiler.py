@@ -2,6 +2,7 @@ from django import template
 
 from subprocess import Popen, PIPE
 import re
+import sys
 
 from ..settings import ELM_COMPILER_EXECUTABLE
 
@@ -20,6 +21,9 @@ class ElmNode(template.Node):
     def compile(self,source):
         process = Popen(ELM_COMPILER_EXECUTABLE,shell=True, stdin=PIPE, stdout=PIPE)
         (javascript,err) = process.communicate(input=self.nodelist.render(source))
+        if err:
+            print >> sys.stderr , err
+            return err
         return javascript
 
     def render(self, context):
