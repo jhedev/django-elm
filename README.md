@@ -1,13 +1,13 @@
 ##Requirements
-Make sure you have installed the Haskell Platform and runghc in your path.
+Make sure you have installed the Haskell Platform and ghc in your path.
 
 Install Elm with:
 
 `cabal install elm`
 
-##Installtion
+##Installation
 
-`python setup.py install` will install all needed files
+`python setup.py install` will compile the elm compiler and install all needed files
 
 Now you can add `elm` to your INSTALLED_APPS in your django project.
 
